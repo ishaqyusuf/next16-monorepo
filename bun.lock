@@ -96,6 +96,7 @@
       "name": "@next16/db",
       "version": "1.0.0",
       "dependencies": {
+        "@next16/tsconfig": "workspace:*",
         "@prisma/client": "^6.17.1",
         "@prisma/extension-accelerate": "^2.0.2",
         "@t3-oss/env-core": "^0.11.1",
