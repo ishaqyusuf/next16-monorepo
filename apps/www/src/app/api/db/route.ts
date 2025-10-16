@@ -1,6 +1,7 @@
-import { prisma } from "@next16/db";
+import { PrismaClient } from "@next16/db";
 import { NextRequest, NextResponse } from "next/server";
 
+const db = new PrismaClient();
 export async function GET(req: NextRequest) {
   // get search params
   const q = req.nextUrl.searchParams.get("q");
@@ -9,7 +10,7 @@ export async function GET(req: NextRequest) {
       data: {},
       error: "No query provided",
     });
-  const data = await prisma.user.count({});
+  const data = await db.user.count({});
   return NextResponse.json({
     data,
     error: null,
